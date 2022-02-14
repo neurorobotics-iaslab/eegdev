@@ -408,15 +408,21 @@ static int prepareMask(struct eego_eegdev* eegodev, const char* optv[]) {
     
     // 64 CA-200 cap
     if (strcmp(optv[3], "200") == 0) {
-      eegodev->eegolabel = &eegolabel200;
+      //eegodev->eegolabel = &eegolabel200;
+	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:10
+	  eegodev->eegolabel = (char (*)[8])eegolabel200;
     } 
     // 128 CA-203 cap
     else if (strcmp(optv[3], "203") == 0) {
-      eegodev->eegolabel = &eegolabel203;
+      //eegodev->eegolabel = &eegolabel203;
+	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:35
+      eegodev->eegolabel = (char (*)[8])eegolabel203;
     }
     // 32 CA-209 cap
     else if (strcmp(optv[3], "209") == 0) {
-      eegodev->eegolabel = &eegolabel209;
+      //eegodev->eegolabel = &eegolabel209;
+	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:52
+      eegodev->eegolabel = (char (*)[8])eegolabel209;
     }
   
   } else {
@@ -424,17 +430,23 @@ static int prepareMask(struct eego_eegdev* eegodev, const char* optv[]) {
     // 64 CA-200 cap
     if (strcmp(optv[3], "200") == 0) {
       eegodev->ref_mask = (unsigned long long) 0xFFFFFFFFFFFFFFFF; //0x800000007FFFFFFF;
-      eegodev->eegolabel = &eegolabel200;
+      //eegodev->eegolabel = &eegolabel200;
+	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:10
+	  eegodev->eegolabel = (char (*)[8])eegolabel200;
     } 
     // 128 CA-203 cap
     else if (strcmp(optv[3], "203") == 0) {
       eegodev->ref_mask = (unsigned long long) 0xFFFFFFFFFFFFFFFF; //
-      eegodev->eegolabel = &eegolabel203;
+      //eegodev->eegolabel = &eegolabel203;
+	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:35
+      eegodev->eegolabel = (char (*)[8])eegolabel203;
     }
     // 32 CA-209 cap
     else if (strcmp(optv[3], "209") == 0) {
       eegodev->ref_mask = (unsigned long long) 0xFFFFFFFF;
-      eegodev->eegolabel = &eegolabel209;
+      //eegodev->eegolabel = &eegolabel209;
+	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:52
+      eegodev->eegolabel = (char (*)[8])eegolabel209;
     }
   }
 
@@ -454,7 +466,6 @@ static int eego_open_device(struct devmodule* dev, const char* optv[]) {
 
   struct eego_eegdev* eegodev = get_eego(dev);
 
-  
   // Initialize the amplifiers
   initialize_amplifiers(eegodev);
 
@@ -466,6 +477,7 @@ static int eego_open_device(struct devmodule* dev, const char* optv[]) {
 	goto error;
   }
 
+
   // Prepare the masks in the proper format.
   prepareMask(eegodev, optv);
 
@@ -474,11 +486,14 @@ static int eego_open_device(struct devmodule* dev, const char* optv[]) {
   double bipolar_range = get_bip_range(eegodev);  
 
   // Open the stream.
+
   eegodev->streams_id = eemagine_sdk_open_eeg_stream(
       eegodev->amplifier_info.id, atoi(optv[0]), reference_range, bipolar_range,
       eegodev->ref_mask, eegodev->bip_mask);
   check_status("open eeg stream", eegodev->streams_id);
 
+
+  
   // Get the channels number.
   eegodev->stream_nb_channels =
       eemagine_sdk_get_stream_channel_count(eegodev->streams_id);
