@@ -622,10 +622,10 @@ static void eego_fill_chinfo(const struct devmodule* dev, int stype,
     info->label = (stype == EGD_EEG) ? eegodev->eeglabel[ich] : eegodev->sensorlabel[ich];
     t = 0;
   } else {
-    info->isint = 0;
-    info->dtype = EGD_DOUBLE;
-    info->min.valdouble = -DBL_MAX;
-    info->max.valdouble = DBL_MAX;
+    info->isint = 1;
+    info->dtype = EGD_INT32;
+    info->min.valint32_t = -8388608;
+    info->max.valint32_t = 8388608;
     info->label = trigglabel;
     t = 1;
   }
