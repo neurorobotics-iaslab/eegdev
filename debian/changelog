@@ -1,0 +1,6 @@
+eegdev (0.3.0-1) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Luca Tonin <luca.tonin@dei.unipd.it>  Tue, 03 Jan 2023 19:37:31 +0100

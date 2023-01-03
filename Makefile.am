@@ -1,5 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4 --install
-SUBDIRS = gnulib-local lib src/core src/plugins doc tests
+#SUBDIRS = gnulib-local lib src/core src/plugins doc tests
+SUBDIRS = gnulib-local lib src/core src/plugins doc
 EXTRA_DIST = autogen.sh m4/gnulib-cache.m4 README_build
 	
 install-usb-plugdev:

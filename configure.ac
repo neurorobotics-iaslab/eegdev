@@ -8,7 +8,7 @@
 # set age to 0.
 
 m4_define([lib_current],0)
-m4_define([lib_revision],2)
+m4_define([lib_revision],3)
 m4_define([lib_age],0)
 
 # Setup autoconf
@@ -309,13 +309,18 @@ AH_TOP([#ifndef CONFIG_H
 #define CONFIG_H])
 AH_BOTTOM([#endif /*CONFIG_H*/])
 
+#AC_CONFIG_FILES([Makefile lib/Makefile gnulib-local/Makefile
+#                 src/core/Makefile src/core/eegdev.pc
+#		src/plugins/Makefile 
+#        tests/Makefile tests/fakelibs/Makefile
+#		doc/Makefile doc/egd_open.3
+#		doc/examples/Makefile
+#		doc/examples/library-usage/Makefile])
+
 AC_CONFIG_FILES([Makefile lib/Makefile gnulib-local/Makefile
                  src/core/Makefile src/core/eegdev.pc
 		src/plugins/Makefile 
-        tests/Makefile tests/fakelibs/Makefile
-		doc/Makefile doc/egd_open.3
-		doc/examples/Makefile
-		doc/examples/library-usage/Makefile])
+		doc/Makefile doc/egd_open.3])
 AC_OUTPUT
 
 echo "

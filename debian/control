@@ -1,0 +1,53 @@
+Source: eegdev
+Section: libs
+Priority: optional
+Maintainer: Luca Tonin <luca.tonin@dei.unipd.it>
+Build-Depends: bison,
+               debhelper (>=11~),
+               dh-autoreconf,
+               flex,
+               libexpat1-dev,
+               libltdl-dev,
+               libusb-1.0-0-dev,
+               libxdffileio-dev,
+               pkg-config
+Standards-Version: 4.1.4
+
+Package: libeegdev0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: eegdev-plugins-free
+Description: auto-generated package by debmake: lib #1
+ This package contains the shared library.: #1
+
+Package: eegdev-plugins-free
+Architecture: any
+Multi-Arch: same
+Depends: libeegdev0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: auto-generated package by debmake: bin #2
+ This package contains the compiled binary executable.: #2
+
+Package: eegdev-gtec
+Architecture: any
+Multi-Arch: foreign
+Depends: libeegdev0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: auto-generated package by debmake: bin #3
+ This package contains the compiled binary executable.: #3
+
+Package: eegdev-antneuro
+Architecture: any
+Multi-Arch: foreign
+Depends: libeegdev0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: auto-generated package by debmake: bin #4
+ This package contains the compiled binary executable.: #4
+
+Package: libeegdev-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libeegdev0 (= ${binary:Version}), ${misc:Depends}
+Description: auto-generated package by debmake: dev #5
+ This package contains the development files.: #5

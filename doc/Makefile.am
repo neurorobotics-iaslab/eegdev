@@ -1,4 +1,4 @@
-SUBDIRS = examples
+#SUBDIRS = examples
 
 MANPAGES = egd_get_data.3 egd_get_available.3	\
 		egd_acq_setup.3				\

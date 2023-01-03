@@ -1,0 +1,424 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: eegdev
+Source: <url://example.com>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     .gitignore
+           Makefile.am
+           NEWS
+           README
+           README_build
+           autogen.sh
+           auxconfig/50-usb-plugdev.rules
+           auxconfig/90-eego.rules
+           config/.dummy
+           configure.ac
+           doc/Makefile.am
+           doc/device/biosemi-64ch-mapping.txt
+           doc/egd_get_available.3
+           doc/egd_sensor_name.3
+           doc/egd_stop.3
+           doc/examples/Makefile.am
+           doc/examples/README
+           doc/examples/library-usage/Makefile.in
+           doc/examples/plugin/Makefile
+           doc/examples/plugin/README
+           doc/examples/testexamples.sh
+           doc/internals/user-core-backend.dia
+           gnulib-local/Makefile.am
+           gnulib-local/m4/funcarg.m4
+           gnulib-local/modules/clock-functions
+           gnulib-local/modules/dlopen
+           gnulib-local/modules/search-winfuncs
+           lib/.dummy
+           lib/.gitignore
+           m4/.gitignore
+           m4/api-exports.m4
+           src/core/Makefile.am
+           src/core/eegdev.pc.in
+           src/plugins/DSI.h
+           src/plugins/DSI_API_Loader.c
+           src/plugins/Makefile.am
+           src/plugins/RecorderRDA.h
+           src/plugins/eego.c
+           tests/Makefile.am
+           tests/conffiles/datafile.conf
+           tests/conffiles/eegdev.conf
+           tests/conffiles/gtec.conf
+           tests/fakelibs/Makefile.am
+           tests/testfakeact2.sh
+           tests/testfakegtec.sh
+           tests/testfaketobiia.sh
+           tests/verify-cast.sh
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     doc/examples/plugin/saw.c
+           gnulib-local/lib/clock_gettime.c
+           gnulib-local/lib/clock_nanosleep.c
+           gnulib-local/lib/decl-dlfcn.h
+           gnulib-local/lib/dlopen.c
+           gnulib-local/lib/portable-time.h
+           src/core/conffile.h
+           src/core/conffile.l
+           src/core/conffile.y
+           src/core/configuration.c
+           src/core/configuration.h
+           src/core/confline.h
+           src/core/confline.l
+           src/core/confline.y
+           src/core/core.c
+           src/core/coreinternals.h
+           src/core/eegdev-pluginapi.h
+           src/core/eegdev.h
+           src/core/opendev.c
+           src/core/sensortypes.c
+           src/core/typecast.c
+           src/plugins/arduino.c
+           src/plugins/barv.c
+           src/plugins/bbt.c
+           src/plugins/biosemi.c
+           src/plugins/device-helper.c
+           src/plugins/device-helper.h
+           src/plugins/fileout.c
+           src/plugins/gtec.c
+           src/plugins/gtecnet.c
+           src/plugins/lsl.c
+           src/plugins/neurone.c
+           src/plugins/neurosky.c
+           src/plugins/q20.c
+           src/plugins/tobiia.c
+           src/plugins/wsdsi.c
+Copyright: 2010-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface) Nicolas Bourdaud <nicolas.bourdaud@epfl.ch>
+           2010-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface) Nicolas Bourdaud <nicolas.bourdaud@gmail.com>
+           2010-2014 EPFL (Ecole Polytechnique Fédérale de Lausanne) Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface) Nicolas Bourdaud <nicolas.bourdaud@epfl.ch> Serafeim Perdikis <serafeim.perdikis@epfl.ch>
+           2011-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface) Nicolas Bourdaud <nicolas.bourdaud@egmail.com>
+           2011-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Nicolas Bourdaud <nicolas.bourdaud@gmail.com>
+           2012 EPFL (Ecole Polytechnique Fédérale de Lausanne)
+           2012 Nicolas Bourdaud <nicolas.bourdaud@gmail.com> Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface)
+License:   LGPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ Version 3 can be found in `/usr/share/common-licenses/LGPL-3'.
+
+Files:     doc/eegdev-arduino.5
+           doc/eegdev-barv.5
+           doc/eegdev-bbt.5
+           doc/eegdev-biosemi.5
+           doc/eegdev-datafile.5
+           doc/eegdev-eego.5
+           doc/eegdev-gtec.5
+           doc/eegdev-gtecnet.5
+           doc/eegdev-gtecnet.5~
+           doc/eegdev-neurosky.5
+           doc/eegdev-open-options.5
+           doc/eegdev-tobiia.5
+           doc/eegdev-wsdsi.5
+           doc/egd_acq_setup.3
+           doc/egd_channel_info.3
+           doc/egd_close.3
+           doc/egd_get_cap.3
+           doc/egd_get_data.3
+           doc/egd_get_numch.3
+           doc/egd_open.3
+           doc/egd_open.3.in
+           doc/egd_sensor_type.3
+           doc/egd_start.3
+Copyright: 2010-2015 (c) EPFL
+License:   __NO_LICENSE__
+
+Files:     doc/examples/library-usage/acquisition.c
+           doc/examples/library-usage/acquisition.h
+           doc/examples/library-usage/eegdev_acq.c
+           doc/examples/library-usage/recinxdf.c
+           tests/fakelibs/activetwo.c
+           tests/fakelibs/fakeact2.h
+           tests/fakelibs/fakegtec.h
+           tests/fakelibs/gusbamp.c
+           tests/fakelibs/tia-server.c
+           tests/fakelibs/tia-server.h
+           tests/fakelibs/time-utils.h
+           tests/verifycast.c
+           tests/verifysplit.c
+Copyright: 2010-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface) Nicolas Bourdaud <nicolas.bourdaud@epfl.ch>
+           2010-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Nicolas Bourdaud <nicolas.bourdaud@epfl.ch>
+License:   GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+Files:     tests/sysbiosemi.c
+           tests/syseegfile.c
+           tests/sysgtec.c
+           tests/sysneurosky.c
+           tests/systobiia.c
+Copyright: 2010-2011 EPFL (Ecole Polytechnique Fédérale de Lausanne) Laboratory CNBI (Chair in Non-Invasive Brain-Machine Interface) Nicolas Bourdaud <nicolas.bourdaud@epfl.ch>
+           2010-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne) Nicolas Bourdaud <nicolas.bourdaud@epfl.ch>
+License:   GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ #include <sys/time.h>
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+Files:     src/plugins/ftd2xx.h
+Copyright: 2001-2011 Future Technology Devices International Limited
+License:   __UNKNOWN__
+ THIS SOFTWARE IS PROVIDED BY FUTURE TECHNOLOGY DEVICES INTERNATIONAL LIMITED "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ FUTURE TECHNOLOGY DEVICES INTERNATIONAL LIMITED BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ FTDI DRIVERS MAY BE USED ONLY IN CONJUNCTION WITH PRODUCTS BASED ON FTDI PARTS.
+ .
+ FTDI DRIVERS MAY BE DISTRIBUTED IN ANY FORM AS LONG AS LICENSE INFORMATION IS NOT MODIFIED.
+ .
+ IF A CUSTOM VENDOR ID AND/OR PRODUCT ID OR DESCRIPTION STRING ARE USED, IT IS THE
+ RESPONSIBILITY OF THE PRODUCT MANUFACTURER TO MAINTAIN ANY CHANGES AND SUBSEQUENT WHQL
+ RE-CERTIFICATION AS A RESULT OF MAKING THESE CHANGES.
+
+Files:     AUTHORS
+Copyright: 2010-2012 EPFL (Ecole Polytechnique Fédérale de Lausanne)
+License:   __UNKNOWN__
+ Nicolas Bourdaud <nicolas.bourdaud@epfl.ch> (CNBI lab, EPFL)
+
+Files:     src/plugins/eego_wrapper.h
+Copyright: 2015 eemagine Medical Imaging Solutions GmbH
+License:   __UNKNOWN__
+ 1. Redistributions of source code must retain the copyright notice this list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ .
+ 3. All advertising materials mentioning features or use of this software must display the following acknowledgement: This product includes software developed by the eemagine Medical Imaging Solutions GmbH.
+ .
+ 4. Neither the name of the eemagine Medical Imaging Solutions GmbH nor the names of its contributors or products may be used to endorse or promote products derived from this software without specific prior written permission by eemagine
+ .
+ This Software is provided by eemagine Medical Imaging Solutions GmbH ''As Is'' and any express or implied warranties, including, but not limited to, the implied warranties merchantability and fitness for a particular purpose are disclaimed. In no event shall eemagine be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to, procurement of substitute goods or services, loss of use, data, or profits, or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
+ .
+ The eego amplifier comes with its own user manual, which must be read carefully before making use of this SDK or any derived software.
+ .
+ You need to run full testing and qualification based on your own requirements to claim any performance of the combined system.
+ .
+ Please be especially advised that any certification holding for the eego amplifier is not valid for a combined system of your application software and the eego amplifier. You must obtain your own certification for a combined system of amplifier and software.
+
+Files:     m4/ax_define_dir.m4
+Copyright: 2008 Alexandre Oliva
+           2008 Andreas Schwab <schwab@suse.de>
+           2008 Guido U. Draheim <guidod@gmx.de>
+           2008 Stepan Kasal <kasal@ucw.cz>
+License:   __AUTO_PERMISSIVE__
+ Autogenerated files with permissive licenses.
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
+
+#----------------------------------------------------------------------------
+# License file: COPYING
+                    GNU LESSER GENERAL PUBLIC LICENSE
+                        Version 3, 29 June 2007
+ .
+  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+  Everyone is permitted to copy and distribute verbatim copies
+  of this license document, but changing it is not allowed.
+ .
+ .
+   This version of the GNU Lesser General Public License incorporates
+ the terms and conditions of version 3 of the GNU General Public
+ License, supplemented by the additional permissions listed below.
+ .
+   0. Additional Definitions.
+ .
+   As used herein, "this License" refers to version 3 of the GNU Lesser
+ General Public License, and the "GNU GPL" refers to version 3 of the GNU
+ General Public License.
+ .
+   "The Library" refers to a covered work governed by this License,
+ other than an Application or a Combined Work as defined below.
+ .
+   An "Application" is any work that makes use of an interface provided
+ by the Library, but which is not otherwise based on the Library.
+ Defining a subclass of a class defined by the Library is deemed a mode
+ of using an interface provided by the Library.
+ .
+   A "Combined Work" is a work produced by combining or linking an
+ Application with the Library.  The particular version of the Library
+ with which the Combined Work was made is also called the "Linked
+ Version".
+ .
+   The "Minimal Corresponding Source" for a Combined Work means the
+ Corresponding Source for the Combined Work, excluding any source code
+ for portions of the Combined Work that, considered in isolation, are
+ based on the Application, and not on the Linked Version.
+ .
+   The "Corresponding Application Code" for a Combined Work means the
+ object code and/or source code for the Application, including any data
+ and utility programs needed for reproducing the Combined Work from the
+ Application, but excluding the System Libraries of the Combined Work.
+ .
+   1. Exception to Section 3 of the GNU GPL.
+ .
+   You may convey a covered work under sections 3 and 4 of this License
+ without being bound by section 3 of the GNU GPL.
+ .
+   2. Conveying Modified Versions.
+ .
+   If you modify a copy of the Library, and, in your modifications, a
+ facility refers to a function or data to be supplied by an Application
+ that uses the facility (other than as an argument passed when the
+ facility is invoked), then you may convey a copy of the modified
+ version:
+ .
+    a) under this License, provided that you make a good faith effort to
+    ensure that, in the event an Application does not supply the
+    function or data, the facility still operates, and performs
+    whatever part of its purpose remains meaningful, or
+ .
+    b) under the GNU GPL, with none of the additional permissions of
+    this License applicable to that copy.
+ .
+   3. Object Code Incorporating Material from Library Header Files.
+ .
+   The object code form of an Application may incorporate material from
+ a header file that is part of the Library.  You may convey such object
+ code under terms of your choice, provided that, if the incorporated
+ material is not limited to numerical parameters, data structure
+ layouts and accessors, or small macros, inline functions and templates
+ (ten or fewer lines in length), you do both of the following:
+ .
+    a) Give prominent notice with each copy of the object code that the
+    Library is used in it and that the Library and its use are
+    covered by this License.
+ .
+    b) Accompany the object code with a copy of the GNU GPL and this license
+    document.
+ .
+   4. Combined Works.
+ .
+   You may convey a Combined Work under terms of your choice that,
+ taken together, effectively do not restrict modification of the
+ portions of the Library contained in the Combined Work and reverse
+ engineering for debugging such modifications, if you also do each of
+ the following:
+ .
+    a) Give prominent notice with each copy of the Combined Work that
+    the Library is used in it and that the Library and its use are
+    covered by this License.
+ .
+    b) Accompany the Combined Work with a copy of the GNU GPL and this license
+    document.
+ .
+    c) For a Combined Work that displays copyright notices during
+    execution, include the copyright notice for the Library among
+    these notices, as well as a reference directing the user to the
+    copies of the GNU GPL and this license document.
+ .
+    d) Do one of the following:
+ .
+        0) Convey the Minimal Corresponding Source under the terms of this
+        License, and the Corresponding Application Code in a form
+        suitable for, and under terms that permit, the user to
+        recombine or relink the Application with a modified version of
+        the Linked Version to produce a modified Combined Work, in the
+        manner specified by section 6 of the GNU GPL for conveying
+        Corresponding Source.
+ .
+        1) Use a suitable shared library mechanism for linking with the
+        Library.  A suitable mechanism is one that (a) uses at run time
+        a copy of the Library already present on the user's computer
+        system, and (b) will operate properly with a modified version
+        of the Library that is interface-compatible with the Linked
+        Version.
+ .
+    e) Provide Installation Information, but only if you would otherwise
+    be required to provide such information under section 6 of the
+    GNU GPL, and only to the extent that such information is
+    necessary to install and execute a modified version of the
+    Combined Work produced by recombining or relinking the
+    Application with a modified version of the Linked Version. (If
+    you use option 4d0, the Installation Information must accompany
+    the Minimal Corresponding Source and Corresponding Application
+    Code. If you use option 4d1, you must provide the Installation
+    Information in the manner specified by section 6 of the GNU GPL
+    for conveying Corresponding Source.)
+ .
+   5. Combined Libraries.
+ .
+   You may place library facilities that are a work based on the
+ Library side by side in a single library together with other library
+ facilities that are not Applications and are not covered by this
+ License, and convey such a combined library under terms of your
+ choice, if you do both of the following:
+ .
+    a) Accompany the combined library with a copy of the same work based
+    on the Library, uncombined with any other library facilities,
+    conveyed under the terms of this License.
+ .
+    b) Give prominent notice with the combined library that part of it
+    is a work based on the Library, and explaining where to find the
+    accompanying uncombined form of the same work.
+ .
+   6. Revised Versions of the GNU Lesser General Public License.
+ .
+   The Free Software Foundation may publish revised and/or new versions
+ of the GNU Lesser General Public License from time to time. Such new
+ versions will be similar in spirit to the present version, but may
+ differ in detail to address new problems or concerns.
+ .
+   Each version is given a distinguishing version number. If the
+ Library as you received it specifies that a certain numbered version
+ of the GNU Lesser General Public License "or any later version"
+ applies to it, you have the option of following the terms and
+ conditions either of that published version or of any later version
+ published by the Free Software Foundation. If the Library as you
+ received it does not specify a version number of the GNU Lesser
+ General Public License, you may choose any version of the GNU Lesser
+ General Public License ever published by the Free Software Foundation.
+ .
+   If the Library as you received it specifies that a proxy can decide
+ whether future versions of the GNU Lesser General Public License shall
+ apply, that proxy's public statement of acceptance of any version is
+ permanent authorization for you to choose that version for the
+ Library.
