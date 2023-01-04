@@ -33,14 +33,20 @@ Description: auto-generated package by debmake: bin #2
 Package: eegdev-gtec
 Architecture: any
 Multi-Arch: foreign
-Depends: libeegdev0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Depends: libeegdev0 (= ${binary:Version}),
+         libgusbampapi1.14,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: auto-generated package by debmake: bin #3
  This package contains the compiled binary executable.: #3
 
 Package: eegdev-antneuro
 Architecture: any
 Multi-Arch: foreign
-Depends: libeegdev0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Depends: libeegdev0 (= ${binary:Version}),
+         libeego-sdk,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: auto-generated package by debmake: bin #4
  This package contains the compiled binary executable.: #4
 
