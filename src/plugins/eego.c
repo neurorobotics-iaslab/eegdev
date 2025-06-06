@@ -64,6 +64,16 @@ static label8_t eegolabel209[] = {
     "C4",    "T8",     "M2",    "CP5",    "CP1",   "CP2",    "CP6",    "P7",
     "P3",    "PZ",     "P4",    "P8",     "POZ",   "O1",     "OZ",     "O2" };
 
+// Edited by P. Simonetto <piero.simonetto@phd.unpd.it> on 20/11/2024 15:59:00
+// 32 channels CA-001 cap
+static label8_t eegolabel001[] = {
+    "AF3",   "AF4",    "F3",   "F1",     "Fz",    "F2",     "F4",     "FC3",
+    "FC1",   "FCz",    "FC2",  "FC4",    "C3",    "C1",     "Cz",    "C2",  
+    "C4",    "CP3",    "CP1",   "CPz",  "CP2",    "CP4",   "P3",     "P1", 
+    "Pz",    "P2",     "P4",    "PO3",  "POz",    "PO4",   "O1",     "O2"};
+
+// Edited by P. Simonetto <piero.simonetto@phd.unpd.it> on 20/05/2025 14:48:00
+// In theory this is 208 not 200
 // 64 channels CA-200 cap
 static label8_t eegolabel200[] = {
     "FP1",   "FPZ",    "FP2",   "F7",     "F3",    "FZ",     "F4",     "F8",
@@ -74,6 +84,19 @@ static label8_t eegolabel200[] = {
     "FC3",   "FCZ",    "FC4",   "C5",     "C1",    "C2",     "C6",     "CP3",
     "CP4",   "P5",     "P1",    "P2",     "P6",    "PO5",    "PO3",    "PO4",
     "PO6",   "FT7",    "FT8",   "TP7",    "TP8",   "PO7",    "PO8",    "OZ" };
+
+// Edited by P. Simonetto <piero.simonetto@phd.unpd.it> on 20/05/2025 14:48:00
+// 64 channels CX-210 cap
+static label8_t eegolabel210[] = {
+    "FP1",   "FPZ",    "FP2",   "F7",     "F3",    "FZ",     "F4",     "F8",
+    "FC5",   "FC1",    "FC2",   "FC6",    "M1",    "T7",     "C3",     "CZ",
+    "C4",    "T8",     "M2",    "CP5",    "CP1",   "CP2",    "CP6",    "P7",
+    "P3",    "PZ",     "P4",    "P8",     "POZ",   "O1",     "O2",     "CPZ",
+    "AF7",   "AF3",    "AF4",   "AF8",    "F5",    "F1",     "F2",     "F6",
+    "FC3",   "FCZ",    "FC4",   "C5",     "C1",    "C2",     "C6",     "CP3",
+    "CP4",   "P5",     "P1",    "P2",     "P6",    "PO5",    "PO3",    "PO4",
+    "PO6",   "FT7",    "FT8",   "TP7",    "TP8",   "PO7",    "PO8",    "OZ" };
+
 
 // 128 channels CA-203 cap
 static label8_t eegolabel203[] = {
@@ -401,11 +424,17 @@ error:
 static int prepareMask(struct eego_eegdev* eegodev, const char* optv[]) {
   
   char *end;
+
+  printf("cap ");
+  for (int i = 0; i < 4; i++) {
+    printf("%s ", optv[i]);
+  }
+  printf("\n");
   
   if (strcmp(optv[1],"NOMASK") != 0) {
     
     eegodev->ref_mask = strtoull(optv[1], &end, 16);
-    
+
     // 64 CA-200 cap
     if (strcmp(optv[3], "200") == 0) {
       //eegodev->eegolabel = &eegolabel200;
@@ -423,6 +452,18 @@ static int prepareMask(struct eego_eegdev* eegodev, const char* optv[]) {
       //eegodev->eegolabel = &eegolabel209;
 	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:52
       eegodev->eegolabel = (char (*)[8])eegolabel209;
+    }
+
+    // 64 CX-210 cap
+    else if (strcmp(optv[3], "210") == 0) {
+	    // Edited by P. Simonetto <piero.simonetto@phd.unpd.it> on 20/05/2025 14:48:00
+      eegodev->eegolabel = (char (*)[8])eegolabel210;
+    }
+
+    // 32 CA-001 cap
+    else if (strcmp(optv[3], "001") == 0) {
+      // Edited by P.Simonetto <piero.simonetto@phd.dei.unpd.it> on 20/11/2024 15:58:00
+      eegodev->eegolabel = (char (*)[8])eegolabel001;
     }
   
   } else {
@@ -447,6 +488,20 @@ static int prepareMask(struct eego_eegdev* eegodev, const char* optv[]) {
       //eegodev->eegolabel = &eegolabel209;
 	  // Edited by L.Tonin  <luca.tonin@dei.unipd.it> on 14/02/22 10:55:52
       eegodev->eegolabel = (char (*)[8])eegolabel209;
+    }
+
+    // 64 CX-210 cap
+    else if (strcmp(optv[3], "210") == 0) {
+	    // Edited by P. Simonetto <piero.simonetto@phd.unpd.it> on 20/05/2025 14:48:00
+      eegodev->ref_mask = (unsigned long long) 0xFFFFFFFFFFFFFFFF; //0x800000007FFFFFFF;
+      eegodev->eegolabel = (char (*)[8])eegolabel210;
+    }
+
+    // 32 CA-001 cap
+    else if (strcmp(optv[3], "001") == 0) {
+      eegodev->ref_mask = (unsigned long long) 0xFFFFFFFF;
+      // Edited by P.Simonetto <piero.simonetto@phd.dei.unpd.it> on 20/11/2024 15:58:00
+      eegodev->eegolabel = (char (*)[8])eegolabel001;
     }
   }
 
